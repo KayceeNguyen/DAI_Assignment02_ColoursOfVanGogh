@@ -6,27 +6,35 @@ test.describe('Header area', () => {
     test('The title tag', async({ page }) => {
         await page.goto(urlHome)
 
-        await expect(page).toHaveTitle('Found');
+        await expect(page).toHaveTitle('Colours of Van Gogh');
     })
 
     test('The meta tag', async ({ page }) => { 
         await page.goto(urlHome)
         
         const metaDescriptionOne = page.locator('meta[name="description"]')
-        await expect(metaDescriptionOne).toHaveAttribute("content", "Found is an app that digitizes missing pet posters. It aims to elimate paper wastes, boost exposure, and bring your best friend back home quickly and safely.")
+        await expect(metaDescriptionOne).toHaveAttribute("content", "Welcome to Colours of Van Gogh, a website dedicated to exploring the vibrant and expressive world of Vincent Van Gogh's drawings.")
     })
 })
 
-test.describe('Main area', () => {
-    test('Header Tag', async({ page }) => {
-        await page.goto(urlHome)
+test('should display header', async ({ page }) => {
+    const header = await page.waitForSelector('#header');
+    expect(header).toBeTruthy();
+  });
 
-        await expect(page.locator('h1')).toContainText('Never lose your bestfriend again');
-    })
+  test('should display main content', async ({ page }) => {
+    const mainContent = await page.waitForSelector('#main');
+    expect(mainContent).toBeTruthy();
+  });
 
-    test('More About Us Button', async({ page }) => { 
-        await page.goto(urlHome)
+  test('should display "View Gallery" button', async ({ page }) => {
+    const viewGalleryButton = await page.waitForSelector('#viewGalleryBtn');
+    expect(viewGalleryButton).toBeTruthy();
+  });
 
-        await page.getByRole('button', { name: 'Get Started' }).click();
-    })
-})
+  test('should navigate to gallery page when "View Gallery" button is clicked', async ({ page }) => {
+    const galleryPageUrl = 'http://localhost:3000/gallery';
+    await page.click('#viewGalleryBtn');
+    await page.waitForNavigation({ url: galleryPageUrl });
+    expect(page.url()).toEqual(galleryPageUrl);
+  });
