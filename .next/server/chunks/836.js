@@ -35,7 +35,6 @@ module.exports = {
 	"menuItems": "Home_menuItems__KCAmt",
 	"item": "Home_item__UrFES",
 	"headerContainer": "Home_headerContainer__dbWZE",
-	"headerIcon": "Home_headerIcon__Gsnv5",
 	"menuIcon": "Home_menuIcon__ZgTbh",
 	"mainHome": "Home_mainHome___3_XQ",
 	"customBtn": "Home_customBtn__Kg_Pj",
@@ -52,7 +51,8 @@ module.exports = {
 	"container": "Home_container__bCOhY",
 	"input": "Home_input__ZarWZ",
 	"searchBtn": "Home_searchBtn__5_RR5",
-	"Home_container": "Home_Home_container__TaSvS"
+	"Home_container": "Home_Home_container__TaSvS",
+	"portrait": "Home_portrait__XXOQi"
 };
 
 

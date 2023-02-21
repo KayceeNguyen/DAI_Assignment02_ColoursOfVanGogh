@@ -1,0 +1,36 @@
+const { chromium } = require('playwright');
+import { test, expect } from '@playwright/test';
+
+let urlHome = "http://localhost:3000";
+
+test.describe('Colours of Van Gogh', () => {
+  test('Page title is correct', async () => {
+    const browser = await chromium.launch();
+    const page = await browser.newPage();
+    await page.goto(urlHome);
+
+    const title = await page.title();
+    expect(title).toBe('Colours of Van Gogh');
+
+    await browser.close();
+  });
+});
+
+
+describe('Colours of Van Gogh', () => {
+  test('Header bar is visible', async () => {
+    const browser = await chromium.launch();
+    const page = await browser.newPage();
+    await page.goto(urlHome);
+
+    const header = await page.$('header');
+    expect(header).not.toBeNull();
+
+    await browser.close();
+  });
+});
+
+
+
+
+

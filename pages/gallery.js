@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Colours of Van Gogh</title>
+        <title>Colours of Van Gogh Gallery</title>
         <meta name="description" content="Welcome to Colours of Van Gogh, a website dedicated to exploring the vibrant and expressive world of Vincent Van Gogh's drawings." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/020-vincent-van-gogh.png" />
