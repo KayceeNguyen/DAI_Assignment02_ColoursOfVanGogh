@@ -4,16 +4,11 @@ import Navigation from '@/comp/navBar'
 import Router, { useRouter } from "next/router";
 import Head from 'next/head'
 import Image from 'next/image'
-import { useEffect } from "react";
 
 const HeaderBar = () => {
 //   const [dropdownOpen, setDropdownOpen] = useState(false);
 
 //   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
-
-useEffect(() => {
-  console.log("Header component mounted");
-}, []);
 
 const r = useRouter();
 
